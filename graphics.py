@@ -74,4 +74,6 @@ class textBox():
         elif key == pygame.K_LSHIFT or key == pygame.K_RSHIFT: return 'SHIFT'
         elif key == pygame.K_KP_ENTER: return 'LOAD'
         elif key == pygame.K_KP_PLUS: return 'SAVE'
+        elif key == pygame.K_UP: return 'UP'
+        elif key == pygame.K_DOWN: return 'DOWN'
         else: return ''

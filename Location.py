@@ -1,3 +1,5 @@
+import datetime
+
 class Building:
     def __init__(self, name):
         self.name = name
@@ -20,7 +22,15 @@ class Room:
 class Item:
     def __init__(self, name):
         self.name = name
-        self.done = False
+        self.fullAmount = 0
+        self.lastReplaced = '?'
+        self.replacementCycle = []
 
     def setName(self, name):
         self.name = name
+
+class InventoryItem:
+    def __init__(self, _id, name, number):
+        self.id = _id
+        self.name = name
+        self.number = number

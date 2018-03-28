@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>CMU Order Form</h1>
+
+<p>Who are you?</p>
+<form method='POST'>
+  <input type="text" name="person" value="{{request.form.person}}">
+
+<p>Which building is this order for?</p>
+  <select name="building" value="{{request.form.person}}" placeholder="Which Building is this order for?"> Which building is this order for?
+    <option value="Nothing">Choose a Building</option>
+    <option value="Albers">Albers</option>
+    <option value="Confluence">Confluence</option>
+    <option value="Dominquez">Dominquez</option>
+    <option value="Escalante">Escalante</option>
+    <option value="Finearts">Fine Arts</option>
+    <option value="HealthScienceNorth">Health Science North</option>
+    <option value="Houston">Houston</option>
+    <option value="LowellHeiny">Lowell Heiny</option>
+    <option value="MavCenter">Mav Center</option>
+    <option value="MPAC">MPAC</option>
+    <option value="StudentWellness">Student Wellness</option>
+    <option value="UniversityCenter">University Center</option>
+    <option value="Wubben">Wubben</option>
+  </select>
+
+<br>
+<p>Item #1
+  <select name ="item1" value="{{request.form.item1}}">
+    <option value="Nothing">Choose an Item</option>
+    <option value="B0">B0 Green Earth 6CT (7812900)</option>
+    <option value="B01">B01 Alcohol Hand Sanitizer 6CT (7552900)</option>
+    <option value="B02">B02 Paper Towel 6CT (7171020)</option>
+    <option value="B03">B03 Toilet Paper 36CT (161990)</option>
+    <option value="B04">B04 Small Nature Roll Tow. Library 12CT (74540)</option>
+    <option value="#29">#29 Green Bath. Clean</option>
+    <option value="#14">#14 Carpet PreSpray</option>
+    <option value="#15">#15 Carpet Spotter</option>
+    <option value="#16">#16 Re-Juv-Nal</option>
+    <option value="#32">#32 Suprox D</option>
+    <option value="#8">#8 SuperShine-All</option>
+    <option value="#10">#10 Top-Clean</option>
+    <option value="#1">#1 Assurance</option>
+    <option value="#2">#2 WIndo-Clean</option>
+    <option value="B1">B1 Sorb-It (Granular Absorbent) #760</option>
+    <option value="B11">B11 CRT & Plexiglas Cleaner #53727016846</option>
+    <option value="B2">B2 Hill. Citrus-Scrub #HIL0100504</option>
+    <option value="B3">B3 Spartan Creme Cleanser #53727017485</option>
+    <option value="B4">B4 Hillyard Creme Clean #106</option>
+    <option value="B5">B5 Light Acid Bowl Cleaner #103</option>
+    <option value="B6">B6 Chalkboard Cleaner</option>
+    <option value="B7">B7 Spartan Dust Mop Treatment</option>
+    <option value="B8">B8 Hill. Stainless Steel Cleaner/Polish #HIL011345554</option>
+    <option value="B9">B9 3M Stainless Steel Cleaner/Polish</option>
+    <option value="B10">B10 Spar. Oven/Grill Cleaner #5372701767</option>
+    <option value="B11">B11 Super Hil-Aire F&C #HIL0105554</option>
+    <option value="B12">B12 Gum-Go (Freeze) #HIL0103055</option>
+    <option value="B13">B13 Liquid Gum-Go #HIL0091204</option>
+    <option value="B14">B14 Spartan Carpet Stain Remover</option>
+    <option value="B15">B15 Carpet Spotter (Small) # HIL0091004</option>
+    <option value="B16">B16 Carpet Contempo Coffee/Tea Solution</option>
+    <option value="B17">B17 Purell Sanitizing Wipes</option>
+    <option value="B18">B18 Hill. Quick & Clean Sanitizing Wipes</option>
+    <option value="B19">B19 Repel Seal RTU Gal. (HIL0049706)</option>
+    <option value="B20">B20 Take Down F&C Gal. (HIL0046806)</option>
+    <option value="B21">B21 Gum-Go 6.5oz Aerosol 1 Bottle (HIL0103055)</option>
+    <option value="B22">B22 Defoamer II 1 Gal. (HIL0018306)</option>
+    <option value="B23">B23 Laundry Detergent 1 Gal. (HIL0045906)</option>
+    <option value="B24">B24 Creme Clean RTU 12Qt/Case (HIL0010604)</option>
+    <option value="B25">B25 3M Steel Cleaner 21oz. Aerosol (48011591582)</option>
+    <option value="B27">B27 Shower Foam Cleaner 1 Gal. (HIL0017406)</option>
+    <option value="B28">B28 Mariner Acid Restroom 1 Gal. (HIL0047706)</option>
+    <option value="B29">B29 Liquid Enzyme II 1 Gal. (HIL0047006)</option>
+    <option value="B30">B30 Chalk and Whiteboard Clean. (HIL0109355)</option>
+    <option value="B31">B31 Tile and Grout Renovator 1 Gal. (HIL0047506)</option>
+    <option value="L2">L2 Scensible Clear Liners 1000CT (LBCD)</option>
+    <option value="L3">L3 Hospeco Wax Paper Small 500CT (HOS260)</option>
+    <option value="L4">L4 RubMaid Wax Paper 250CT (RUB6141)</option>
+    <option value="B32">B32 38x57 Black 60gal. 100/Case (LRV3860150K)</option>
+    <option value="B33">B33 43x48 Natural 56gal. 200/Case (LH434816N)</option>
+    <option value="B24">B24 30x37 Natural 30gal. 500/Case (LH303713N)</option>
+    <option value="J1">J1 Vinyl Small 100/Box (IVPF)</option>
+    <option value="J2">J2 Vinyl Medium 100/Box (IVPF)</option>
+    <option value="J3">J3 Vinyl Large 100/Box (CMUIVPF)</option>
+    <option value="J4">J4 Vinyl XL 100/Box (CMUIVPF)</option>
+    <option value="J5">J5 Nitrile Blue Small 100/Box (XNPF)</option>
+    <option value="J6">J6 Nitrile Blue Medium 100/Box (XNPF)</option>
+    <option value="J7">J7 Nitrile Blue Large 100/Box (XNPF)</option>
+    <option value="J8">J8 Nitrile Blue XL 100/Box (XNPF)</option>
+    <option value="G1">G1 TCell Citrus Refill 6CT. (1076390502113)</option>
+    <option value="G2">G2 TCell Pure Refill 6CT. (763905024983)</option>
+    <option value="G3">G3 TCell Dispenser #1799881</option>
+    <option value="C1">C1 Shower Cleaning Kit #HIL99225</option>
+    <option value="C2">C2 Micro-Fiber Blue/Glass</option>
+    <option value="C3">C3 Micro-Fiber Red</option>
+    <option value="C4">C4 Micro-Fiber Yellow</option>
+    <option value="C5">C5 Micro-Fiber Green</option>
+    <option value="C6">C6 Toilet Brush (Bristle)</option>
+    <option value="C7">C7 Johnny Mop (Fluffy)</option>
+    <option value="C11">C11 Blank Spray Bottles</option>
+    <option value="C12">C12 Mop Head X-Large (String)</option>
+    <option value="C13">C13 Mop Head Large (String)</option>
+    <option value="C14">C14 Dust Mop Head 24" Blue (String)</option>
+    <option value="C15">C15 Dust Mop Head 18" Red (String)</option>
+    <option value="C16">C16 RubberMaid Mop Head (Green)</option>
+    <option value="C17">C17 Unger Mop Head (Red/White)</option>
+    <option value="C18">C18 Sponge (Yellow/White-Scrub)</option>
+    <option value="C19">C19 Sponge (Yellow/Green-Scrub)</option>
+    <option value="C20">C20 Sponge (Scotch Brite)</option>
+    <option value="C21">C21 White Scrub-Pad</option>
+    <option value="C22">C22 Green Scrub-Pad</option>
+    <option value="C23">C23 Magic Eraser (Blue Stripe, HIL30312)</option>
+    <option value="C24">C24 SOS Pad</option>
+    <option value="C25">C25 SOS Pad (Pink Soap)</option>
+    <option value="C26">C26 Magic Eraser, Blue-Stripe (HIL30312)</option>
+    <option value="K3">K3 Dust-Pan Rub.Maid Upright (RUB2531BK)</option>
+    <option value="K4">K4 Broom Yellow Angler Plastic-Bristle (UNS932A)</option>
+    <option value="K5">K5 Swiffer Duster-Kit Handle/Cloth (PGC82074)</option>
+    <option value="K6">K6 Swiffer Refill (PGC16944CT)</option>
+    <option value="C24">C24 Green 48" #Q448</option>
+    <option value="C25">C25 Green 24" #Q424</option>
+    <option value="C26">C26 Blue 22" #Q411</option>
+    <option value="C27">C27 Blue 18" #Q410</option>
+    <option value="C28">C28 Blue 11" #Q820</option>
+    <option value="C29">C29 White 18" #Q412</option>
+    <option value="D1">D1 Light Duty Dust Masks</option>
+    <option value="D2">D2 Safety Goggles</option>
+    <option value="D3">D3 Respirator Medium #6200/07025</option>
+    <option value="D4">D4 Flat Fold Face Shield #6648</option>
+    <option value="D5">D5 Shoe Covers (Blue)</option>
+    <option value="E1">E1 Windsor Versamatic</option>
+    <option value="E2">E2 Windsor Sensor/Versamatic-Plus</option>
+    <option value="E3">E3 Clarke Carpet-Master</option>
+    <option value="F1">F1 RubberMaid BP6Q</option>
+    <option value="F2">F2 Proteam BP "triangle" bags</option>
+    <option value="F3">F3 Proteam MegaVac, Coach, Super-Coach</option>
+    <option value="F4">F4 Wave/NuWave</option>
+  </select>
+</p>
+
+<p>Quantity
+  <input type="text" name="quantity1" value="{{request.form.quantity1}}">
+</p>
+
+<p>Item #2
+  <select name ="item2" value="{{request.form.item2}}">
+    <option value="Nothing">Choose an Item</option>
+    <option value="B0">B0 Green Earth 6CT (7812900)</option>
+    <option value="B01">B01 Alcohol Hand Sanitizer 6CT (7552900)</option>
+    <option value="B02">B02 Paper Towel 6CT (7171020)</option>
+    <option value="B03">B03 Toilet Paper 36CT (161990)</option>
+    <option value="B04">B04 Small Nature Roll Tow. Library 12CT (74540)</option>
+    <option value="#29">#29 Green Bath. Clean</option>
+    <option value="#14">#14 Carpet PreSpray</option>
+    <option value="#15">#15 Carpet Spotter</option>
+    <option value="#16">#16 Re-Juv-Nal</option>
+    <option value="#32">#32 Suprox D</option>
+    <option value="#8">#8 SuperShine-All</option>
+    <option value="#10">#10 Top-Clean</option>
+    <option value="#1">#1 Assurance</option>
+    <option value="#2">#2 WIndo-Clean</option>
+    <option value="B1">B1 Sorb-It (Granular Absorbent) #760</option>
+    <option value="B11">B11 CRT & Plexiglas Cleaner #53727016846</option>
+    <option value="B2">B2 Hill. Citrus-Scrub #HIL0100504</option>
+    <option value="B3">B3 Spartan Creme Cleanser #53727017485</option>
+    <option value="B4">B4 Hillyard Creme Clean #106</option>
+    <option value="B5">B5 Light Acid Bowl Cleaner #103</option>
+    <option value="B6">B6 Chalkboard Cleaner</option>
+    <option value="B7">B7 Spartan Dust Mop Treatment</option>
+    <option value="B8">B8 Hill. Stainless Steel Cleaner/Polish #HIL011345554</option>
+    <option value="B9">B9 3M Stainless Steel Cleaner/Polish</option>
+    <option value="B10">B10 Spar. Oven/Grill Cleaner #5372701767</option>
+    <option value="B11">B11 Super Hil-Aire F&C #HIL0105554</option>
+    <option value="B12">B12 Gum-Go (Freeze) #HIL0103055</option>
+    <option value="B13">B13 Liquid Gum-Go #HIL0091204</option>
+    <option value="B14">B14 Spartan Carpet Stain Remover</option>
+    <option value="B15">B15 Carpet Spotter (Small) # HIL0091004</option>
+    <option value="B16">B16 Carpet Contempo Coffee/Tea Solution</option>
+    <option value="B17">B17 Purell Sanitizing Wipes</option>
+    <option value="B18">B18 Hill. Quick & Clean Sanitizing Wipes</option>
+    <option value="B19">B19 Repel Seal RTU Gal. (HIL0049706)</option>
+    <option value="B20">B20 Take Down F&C Gal. (HIL0046806)</option>
+    <option value="B21">B21 Gum-Go 6.5oz Aerosol 1 Bottle (HIL0103055)</option>
+    <option value="B22">B22 Defoamer II 1 Gal. (HIL0018306)</option>
+    <option value="B23">B23 Laundry Detergent 1 Gal. (HIL0045906)</option>
+    <option value="B24">B24 Creme Clean RTU 12Qt/Case (HIL0010604)</option>
+    <option value="B25">B25 3M Steel Cleaner 21oz. Aerosol (48011591582)</option>
+    <option value="B27">B27 Shower Foam Cleaner 1 Gal. (HIL0017406)</option>
+    <option value="B28">B28 Mariner Acid Restroom 1 Gal. (HIL0047706)</option>
+    <option value="B29">B29 Liquid Enzyme II 1 Gal. (HIL0047006)</option>
+    <option value="B30">B30 Chalk and Whiteboard Clean. (HIL0109355)</option>
+    <option value="B31">B31 Tile and Grout Renovator 1 Gal. (HIL0047506)</option>
+    <option value="L2">L2 Scensible Clear Liners 1000CT (LBCD)</option>
+    <option value="L3">L3 Hospeco Wax Paper Small 500CT (HOS260)</option>
+    <option value="L4">L4 RubMaid Wax Paper 250CT (RUB6141)</option>
+    <option value="B32">B32 38x57 Black 60gal. 100/Case (LRV3860150K)</option>
+    <option value="B33">B33 43x48 Natural 56gal. 200/Case (LH434816N)</option>
+    <option value="B24">B24 30x37 Natural 30gal. 500/Case (LH303713N)</option>
+    <option value="J1">J1 Vinyl Small 100/Box (IVPF)</option>
+    <option value="J2">J2 Vinyl Medium 100/Box (IVPF)</option>
+    <option value="J3">J3 Vinyl Large 100/Box (CMUIVPF)</option>
+    <option value="J4">J4 Vinyl XL 100/Box (CMUIVPF)</option>
+    <option value="J5">J5 Nitrile Blue Small 100/Box (XNPF)</option>
+    <option value="J6">J6 Nitrile Blue Medium 100/Box (XNPF)</option>
+    <option value="J7">J7 Nitrile Blue Large 100/Box (XNPF)</option>
+    <option value="J8">J8 Nitrile Blue XL 100/Box (XNPF)</option>
+    <option value="G1">G1 TCell Citrus Refill 6CT. (1076390502113)</option>
+    <option value="G2">G2 TCell Pure Refill 6CT. (763905024983)</option>
+    <option value="G3">G3 TCell Dispenser #1799881</option>
+    <option value="C1">C1 Shower Cleaning Kit #HIL99225</option>
+    <option value="C2">C2 Micro-Fiber Blue/Glass</option>
+    <option value="C3">C3 Micro-Fiber Red</option>
+    <option value="C4">C4 Micro-Fiber Yellow</option>
+    <option value="C5">C5 Micro-Fiber Green</option>
+    <option value="C6">C6 Toilet Brush (Bristle)</option>
+    <option value="C7">C7 Johnny Mop (Fluffy)</option>
+    <option value="C11">C11 Blank Spray Bottles</option>
+    <option value="C12">C12 Mop Head X-Large (String)</option>
+    <option value="C13">C13 Mop Head Large (String)</option>
+    <option value="C14">C14 Dust Mop Head 24" Blue (String)</option>
+    <option value="C15">C15 Dust Mop Head 18" Red (String)</option>
+    <option value="C16">C16 RubberMaid Mop Head (Green)</option>
+    <option value="C17">C17 Unger Mop Head (Red/White)</option>
+    <option value="C18">C18 Sponge (Yellow/White-Scrub)</option>
+    <option value="C19">C19 Sponge (Yellow/Green-Scrub)</option>
+    <option value="C20">C20 Sponge (Scotch Brite)</option>
+    <option value="C21">C21 White Scrub-Pad</option>
+    <option value="C22">C22 Green Scrub-Pad</option>
+    <option value="C23">C23 Magic Eraser (Blue Stripe, HIL30312)</option>
+    <option value="C24">C24 SOS Pad</option>
+    <option value="C25">C25 SOS Pad (Pink Soap)</option>
+    <option value="C26">C26 Magic Eraser, Blue-Stripe (HIL30312)</option>
+    <option value="K3">K3 Dust-Pan Rub.Maid Upright (RUB2531BK)</option>
+    <option value="K4">K4 Broom Yellow Angler Plastic-Bristle (UNS932A)</option>
+    <option value="K5">K5 Swiffer Duster-Kit Handle/Cloth (PGC82074)</option>
+    <option value="K6">K6 Swiffer Refill (PGC16944CT)</option>
+    <option value="C24">C24 Green 48" #Q448</option>
+    <option value="C25">C25 Green 24" #Q424</option>
+    <option value="C26">C26 Blue 22" #Q411</option>
+    <option value="C27">C27 Blue 18" #Q410</option>
+    <option value="C28">C28 Blue 11" #Q820</option>
+    <option value="C29">C29 White 18" #Q412</option>
+    <option value="D1">D1 Light Duty Dust Masks</option>
+    <option value="D2">D2 Safety Goggles</option>
+    <option value="D3">D3 Respirator Medium #6200/07025</option>
+    <option value="D4">D4 Flat Fold Face Shield #6648</option>
+    <option value="D5">D5 Shoe Covers (Blue)</option>
+    <option value="E1">E1 Windsor Versamatic</option>
+    <option value="E2">E2 Windsor Sensor/Versamatic-Plus</option>
+    <option value="E3">E3 Clarke Carpet-Master</option>
+    <option value="F1">F1 RubberMaid BP6Q</option>
+    <option value="F2">F2 Proteam BP "triangle" bags</option>
+    <option value="F3">F3 Proteam MegaVac, Coach, Super-Coach</option>
+    <option value="F4">F4 Wave/NuWave</option>
+  </select>
+</p>
+
+<p>Quantity
+  <input type="text" name="quantity2" value="{{request.form.quantity2}}">
+</p>
+
+<p>Item #3
+  <select name ="item3" value="{{request.form.item3}}">
+    <option value="Nothing">Choose an Item</option>
+    <option value="B0">B0 Green Earth 6CT (7812900)</option>
+    <option value="B01">B01 Alcohol Hand Sanitizer 6CT (7552900)</option>
+    <option value="B02">B02 Paper Towel 6CT (7171020)</option>
+    <option value="B03">B03 Toilet Paper 36CT (161990)</option>
+    <option value="B04">B04 Small Nature Roll Tow. Library 12CT (74540)</option>
+    <option value="#29">#29 Green Bath. Clean</option>
+    <option value="#14">#14 Carpet PreSpray</option>
+    <option value="#15">#15 Carpet Spotter</option>
+    <option value="#16">#16 Re-Juv-Nal</option>
+    <option value="#32">#32 Suprox D</option>
+    <option value="#8">#8 SuperShine-All</option>
+    <option value="#10">#10 Top-Clean</option>
+    <option value="#1">#1 Assurance</option>
+    <option value="#2">#2 WIndo-Clean</option>
+    <option value="B1">B1 Sorb-It (Granular Absorbent) #760</option>
+    <option value="B11">B11 CRT & Plexiglas Cleaner #53727016846</option>
+    <option value="B2">B2 Hill. Citrus-Scrub #HIL0100504</option>
+    <option value="B3">B3 Spartan Creme Cleanser #53727017485</option>
+    <option value="B4">B4 Hillyard Creme Clean #106</option>
+    <option value="B5">B5 Light Acid Bowl Cleaner #103</option>
+    <option value="B6">B6 Chalkboard Cleaner</option>
+    <option value="B7">B7 Spartan Dust Mop Treatment</option>
+    <option value="B8">B8 Hill. Stainless Steel Cleaner/Polish #HIL011345554</option>
+    <option value="B9">B9 3M Stainless Steel Cleaner/Polish</option>
+    <option value="B10">B10 Spar. Oven/Grill Cleaner #5372701767</option>
+    <option value="B11">B11 Super Hil-Aire F&C #HIL0105554</option>
+    <option value="B12">B12 Gum-Go (Freeze) #HIL0103055</option>
+    <option value="B13">B13 Liquid Gum-Go #HIL0091204</option>
+    <option value="B14">B14 Spartan Carpet Stain Remover</option>
+    <option value="B15">B15 Carpet Spotter (Small) # HIL0091004</option>
+    <option value="B16">B16 Carpet Contempo Coffee/Tea Solution</option>
+    <option value="B17">B17 Purell Sanitizing Wipes</option>
+    <option value="B18">B18 Hill. Quick & Clean Sanitizing Wipes</option>
+    <option value="B19">B19 Repel Seal RTU Gal. (HIL0049706)</option>
+    <option value="B20">B20 Take Down F&C Gal. (HIL0046806)</option>
+    <option value="B21">B21 Gum-Go 6.5oz Aerosol 1 Bottle (HIL0103055)</option>
+    <option value="B22">B22 Defoamer II 1 Gal. (HIL0018306)</option>
+    <option value="B23">B23 Laundry Detergent 1 Gal. (HIL0045906)</option>
+    <option value="B24">B24 Creme Clean RTU 12Qt/Case (HIL0010604)</option>
+    <option value="B25">B25 3M Steel Cleaner 21oz. Aerosol (48011591582)</option>
+    <option value="B27">B27 Shower Foam Cleaner 1 Gal. (HIL0017406)</option>
+    <option value="B28">B28 Mariner Acid Restroom 1 Gal. (HIL0047706)</option>
+    <option value="B29">B29 Liquid Enzyme II 1 Gal. (HIL0047006)</option>
+    <option value="B30">B30 Chalk and Whiteboard Clean. (HIL0109355)</option>
+    <option value="B31">B31 Tile and Grout Renovator 1 Gal. (HIL0047506)</option>
+    <option value="L2">L2 Scensible Clear Liners 1000CT (LBCD)</option>
+    <option value="L3">L3 Hospeco Wax Paper Small 500CT (HOS260)</option>
+    <option value="L4">L4 RubMaid Wax Paper 250CT (RUB6141)</option>
+    <option value="B32">B32 38x57 Black 60gal. 100/Case (LRV3860150K)</option>
+    <option value="B33">B33 43x48 Natural 56gal. 200/Case (LH434816N)</option>
+    <option value="B24">B24 30x37 Natural 30gal. 500/Case (LH303713N)</option>
+    <option value="J1">J1 Vinyl Small 100/Box (IVPF)</option>
+    <option value="J2">J2 Vinyl Medium 100/Box (IVPF)</option>
+    <option value="J3">J3 Vinyl Large 100/Box (CMUIVPF)</option>
+    <option value="J4">J4 Vinyl XL 100/Box (CMUIVPF)</option>
+    <option value="J5">J5 Nitrile Blue Small 100/Box (XNPF)</option>
+    <option value="J6">J6 Nitrile Blue Medium 100/Box (XNPF)</option>
+    <option value="J7">J7 Nitrile Blue Large 100/Box (XNPF)</option>
+    <option value="J8">J8 Nitrile Blue XL 100/Box (XNPF)</option>
+    <option value="G1">G1 TCell Citrus Refill 6CT. (1076390502113)</option>
+    <option value="G2">G2 TCell Pure Refill 6CT. (763905024983)</option>
+    <option value="G3">G3 TCell Dispenser #1799881</option>
+    <option value="C1">C1 Shower Cleaning Kit #HIL99225</option>
+    <option value="C2">C2 Micro-Fiber Blue/Glass</option>
+    <option value="C3">C3 Micro-Fiber Red</option>
+    <option value="C4">C4 Micro-Fiber Yellow</option>
+    <option value="C5">C5 Micro-Fiber Green</option>
+    <option value="C6">C6 Toilet Brush (Bristle)</option>
+    <option value="C7">C7 Johnny Mop (Fluffy)</option>
+    <option value="C11">C11 Blank Spray Bottles</option>
+    <option value="C12">C12 Mop Head X-Large (String)</option>
+    <option value="C13">C13 Mop Head Large (String)</option>
+    <option value="C14">C14 Dust Mop Head 24" Blue (String)</option>
+    <option value="C15">C15 Dust Mop Head 18" Red (String)</option>
+    <option value="C16">C16 RubberMaid Mop Head (Green)</option>
+    <option value="C17">C17 Unger Mop Head (Red/White)</option>
+    <option value="C18">C18 Sponge (Yellow/White-Scrub)</option>
+    <option value="C19">C19 Sponge (Yellow/Green-Scrub)</option>
+    <option value="C20">C20 Sponge (Scotch Brite)</option>
+    <option value="C21">C21 White Scrub-Pad</option>
+    <option value="C22">C22 Green Scrub-Pad</option>
+    <option value="C23">C23 Magic Eraser (Blue Stripe, HIL30312)</option>
+    <option value="C24">C24 SOS Pad</option>
+    <option value="C25">C25 SOS Pad (Pink Soap)</option>
+    <option value="C26">C26 Magic Eraser, Blue-Stripe (HIL30312)</option>
+    <option value="K3">K3 Dust-Pan Rub.Maid Upright (RUB2531BK)</option>
+    <option value="K4">K4 Broom Yellow Angler Plastic-Bristle (UNS932A)</option>
+    <option value="K5">K5 Swiffer Duster-Kit Handle/Cloth (PGC82074)</option>
+    <option value="K6">K6 Swiffer Refill (PGC16944CT)</option>
+    <option value="C24">C24 Green 48" #Q448</option>
+    <option value="C25">C25 Green 24" #Q424</option>
+    <option value="C26">C26 Blue 22" #Q411</option>
+    <option value="C27">C27 Blue 18" #Q410</option>
+    <option value="C28">C28 Blue 11" #Q820</option>
+    <option value="C29">C29 White 18" #Q412</option>
+    <option value="D1">D1 Light Duty Dust Masks</option>
+    <option value="D2">D2 Safety Goggles</option>
+    <option value="D3">D3 Respirator Medium #6200/07025</option>
+    <option value="D4">D4 Flat Fold Face Shield #6648</option>
+    <option value="D5">D5 Shoe Covers (Blue)</option>
+    <option value="E1">E1 Windsor Versamatic</option>
+    <option value="E2">E2 Windsor Sensor/Versamatic-Plus</option>
+    <option value="E3">E3 Clarke Carpet-Master</option>
+    <option value="F1">F1 RubberMaid BP6Q</option>
+    <option value="F2">F2 Proteam BP "triangle" bags</option>
+    <option value="F3">F3 Proteam MegaVac, Coach, Super-Coach</option>
+    <option value="F4">F4 Wave/NuWave</option>
+  </select>
+</p>
+
+<p>Quantity
+  <input type="text" name="quantity3" value="{{request.form.quantity3}}">
+</p>
+
+<p>Item #4
+  <select name ="item4" value="{{request.form.item4}}">
+    <option value="Nothing">Choose an Item</option>
+    <option value="B0">B0 Green Earth 6CT (7812900)</option>
+    <option value="B01">B01 Alcohol Hand Sanitizer 6CT (7552900)</option>
+    <option value="B02">B02 Paper Towel 6CT (7171020)</option>
+    <option value="B03">B03 Toilet Paper 36CT (161990)</option>
+    <option value="B04">B04 Small Nature Roll Tow. Library 12CT (74540)</option>
+    <option value="#29">#29 Green Bath. Clean</option>
+    <option value="#14">#14 Carpet PreSpray</option>
+    <option value="#15">#15 Carpet Spotter</option>
+    <option value="#16">#16 Re-Juv-Nal</option>
+    <option value="#32">#32 Suprox D</option>
+    <option value="#8">#8 SuperShine-All</option>
+    <option value="#10">#10 Top-Clean</option>
+    <option value="#1">#1 Assurance</option>
+    <option value="#2">#2 WIndo-Clean</option>
+    <option value="B1">B1 Sorb-It (Granular Absorbent) #760</option>
+    <option value="B11">B11 CRT & Plexiglas Cleaner #53727016846</option>
+    <option value="B2">B2 Hill. Citrus-Scrub #HIL0100504</option>
+    <option value="B3">B3 Spartan Creme Cleanser #53727017485</option>
+    <option value="B4">B4 Hillyard Creme Clean #106</option>
+    <option value="B5">B5 Light Acid Bowl Cleaner #103</option>
+    <option value="B6">B6 Chalkboard Cleaner</option>
+    <option value="B7">B7 Spartan Dust Mop Treatment</option>
+    <option value="B8">B8 Hill. Stainless Steel Cleaner/Polish #HIL011345554</option>
+    <option value="B9">B9 3M Stainless Steel Cleaner/Polish</option>
+    <option value="B10">B10 Spar. Oven/Grill Cleaner #5372701767</option>
+    <option value="B11">B11 Super Hil-Aire F&C #HIL0105554</option>
+    <option value="B12">B12 Gum-Go (Freeze) #HIL0103055</option>
+    <option value="B13">B13 Liquid Gum-Go #HIL0091204</option>
+    <option value="B14">B14 Spartan Carpet Stain Remover</option>
+    <option value="B15">B15 Carpet Spotter (Small) # HIL0091004</option>
+    <option value="B16">B16 Carpet Contempo Coffee/Tea Solution</option>
+    <option value="B17">B17 Purell Sanitizing Wipes</option>
+    <option value="B18">B18 Hill. Quick & Clean Sanitizing Wipes</option>
+    <option value="B19">B19 Repel Seal RTU Gal. (HIL0049706)</option>
+    <option value="B20">B20 Take Down F&C Gal. (HIL0046806)</option>
+    <option value="B21">B21 Gum-Go 6.5oz Aerosol 1 Bottle (HIL0103055)</option>
+    <option value="B22">B22 Defoamer II 1 Gal. (HIL0018306)</option>
+    <option value="B23">B23 Laundry Detergent 1 Gal. (HIL0045906)</option>
+    <option value="B24">B24 Creme Clean RTU 12Qt/Case (HIL0010604)</option>
+    <option value="B25">B25 3M Steel Cleaner 21oz. Aerosol (48011591582)</option>
+    <option value="B27">B27 Shower Foam Cleaner 1 Gal. (HIL0017406)</option>
+    <option value="B28">B28 Mariner Acid Restroom 1 Gal. (HIL0047706)</option>
+    <option value="B29">B29 Liquid Enzyme II 1 Gal. (HIL0047006)</option>
+    <option value="B30">B30 Chalk and Whiteboard Clean. (HIL0109355)</option>
+    <option value="B31">B31 Tile and Grout Renovator 1 Gal. (HIL0047506)</option>
+    <option value="L2">L2 Scensible Clear Liners 1000CT (LBCD)</option>
+    <option value="L3">L3 Hospeco Wax Paper Small 500CT (HOS260)</option>
+    <option value="L4">L4 RubMaid Wax Paper 250CT (RUB6141)</option>
+    <option value="B32">B32 38x57 Black 60gal. 100/Case (LRV3860150K)</option>
+    <option value="B33">B33 43x48 Natural 56gal. 200/Case (LH434816N)</option>
+    <option value="B24">B24 30x37 Natural 30gal. 500/Case (LH303713N)</option>
+    <option value="J1">J1 Vinyl Small 100/Box (IVPF)</option>
+    <option value="J2">J2 Vinyl Medium 100/Box (IVPF)</option>
+    <option value="J3">J3 Vinyl Large 100/Box (CMUIVPF)</option>
+    <option value="J4">J4 Vinyl XL 100/Box (CMUIVPF)</option>
+    <option value="J5">J5 Nitrile Blue Small 100/Box (XNPF)</option>
+    <option value="J6">J6 Nitrile Blue Medium 100/Box (XNPF)</option>
+    <option value="J7">J7 Nitrile Blue Large 100/Box (XNPF)</option>
+    <option value="J8">J8 Nitrile Blue XL 100/Box (XNPF)</option>
+    <option value="G1">G1 TCell Citrus Refill 6CT. (1076390502113)</option>
+    <option value="G2">G2 TCell Pure Refill 6CT. (763905024983)</option>
+    <option value="G3">G3 TCell Dispenser #1799881</option>
+    <option value="C1">C1 Shower Cleaning Kit #HIL99225</option>
+    <option value="C2">C2 Micro-Fiber Blue/Glass</option>
+    <option value="C3">C3 Micro-Fiber Red</option>
+    <option value="C4">C4 Micro-Fiber Yellow</option>
+    <option value="C5">C5 Micro-Fiber Green</option>
+    <option value="C6">C6 Toilet Brush (Bristle)</option>
+    <option value="C7">C7 Johnny Mop (Fluffy)</option>
+    <option value="C11">C11 Blank Spray Bottles</option>
+    <option value="C12">C12 Mop Head X-Large (String)</option>
+    <option value="C13">C13 Mop Head Large (String)</option>
+    <option value="C14">C14 Dust Mop Head 24" Blue (String)</option>
+    <option value="C15">C15 Dust Mop Head 18" Red (String)</option>
+    <option value="C16">C16 RubberMaid Mop Head (Green)</option>
+    <option value="C17">C17 Unger Mop Head (Red/White)</option>
+    <option value="C18">C18 Sponge (Yellow/White-Scrub)</option>
+    <option value="C19">C19 Sponge (Yellow/Green-Scrub)</option>
+    <option value="C20">C20 Sponge (Scotch Brite)</option>
+    <option value="C21">C21 White Scrub-Pad</option>
+    <option value="C22">C22 Green Scrub-Pad</option>
+    <option value="C23">C23 Magic Eraser (Blue Stripe, HIL30312)</option>
+    <option value="C24">C24 SOS Pad</option>
+    <option value="C25">C25 SOS Pad (Pink Soap)</option>
+    <option value="C26">C26 Magic Eraser, Blue-Stripe (HIL30312)</option>
+    <option value="K3">K3 Dust-Pan Rub.Maid Upright (RUB2531BK)</option>
+    <option value="K4">K4 Broom Yellow Angler Plastic-Bristle (UNS932A)</option>
+    <option value="K5">K5 Swiffer Duster-Kit Handle/Cloth (PGC82074)</option>
+    <option value="K6">K6 Swiffer Refill (PGC16944CT)</option>
+    <option value="C24">C24 Green 48" #Q448</option>
+    <option value="C25">C25 Green 24" #Q424</option>
+    <option value="C26">C26 Blue 22" #Q411</option>
+    <option value="C27">C27 Blue 18" #Q410</option>
+    <option value="C28">C28 Blue 11" #Q820</option>
+    <option value="C29">C29 White 18" #Q412</option>
+    <option value="D1">D1 Light Duty Dust Masks</option>
+    <option value="D2">D2 Safety Goggles</option>
+    <option value="D3">D3 Respirator Medium #6200/07025</option>
+    <option value="D4">D4 Flat Fold Face Shield #6648</option>
+    <option value="D5">D5 Shoe Covers (Blue)</option>
+    <option value="E1">E1 Windsor Versamatic</option>
+    <option value="E2">E2 Windsor Sensor/Versamatic-Plus</option>
+    <option value="E3">E3 Clarke Carpet-Master</option>
+    <option value="F1">F1 RubberMaid BP6Q</option>
+    <option value="F2">F2 Proteam BP "triangle" bags</option>
+    <option value="F3">F3 Proteam MegaVac, Coach, Super-Coach</option>
+    <option value="F4">F4 Wave/NuWave</option>
+  </select>
+</p>
+
+<p>Quantity
+  <input type="text" name="quantity4" value="{{request.form.quantity4}}">
+</p>
+
+<p>Item #5
+  <select name ="item5" value="{{request.form.item5}}">
+    <option value="Nothing">Choose an Item</option>
+    <option value="B0">B0 Green Earth 6CT (7812900)</option>
+    <option value="B01">B01 Alcohol Hand Sanitizer 6CT (7552900)</option>
+    <option value="B02">B02 Paper Towel 6CT (7171020)</option>
+    <option value="B03">B03 Toilet Paper 36CT (161990)</option>
+    <option value="B04">B04 Small Nature Roll Tow. Library 12CT (74540)</option>
+    <option value="#29">#29 Green Bath. Clean</option>
+    <option value="#14">#14 Carpet PreSpray</option>
+    <option value="#15">#15 Carpet Spotter</option>
+    <option value="#16">#16 Re-Juv-Nal</option>
+    <option value="#32">#32 Suprox D</option>
+    <option value="#8">#8 SuperShine-All</option>
+    <option value="#10">#10 Top-Clean</option>
+    <option value="#1">#1 Assurance</option>
+    <option value="#2">#2 WIndo-Clean</option>
+    <option value="B1">B1 Sorb-It (Granular Absorbent) #760</option>
+    <option value="B11">B11 CRT & Plexiglas Cleaner #53727016846</option>
+    <option value="B2">B2 Hill. Citrus-Scrub #HIL0100504</option>
+    <option value="B3">B3 Spartan Creme Cleanser #53727017485</option>
+    <option value="B4">B4 Hillyard Creme Clean #106</option>
+    <option value="B5">B5 Light Acid Bowl Cleaner #103</option>
+    <option value="B6">B6 Chalkboard Cleaner</option>
+    <option value="B7">B7 Spartan Dust Mop Treatment</option>
+    <option value="B8">B8 Hill. Stainless Steel Cleaner/Polish #HIL011345554</option>
+    <option value="B9">B9 3M Stainless Steel Cleaner/Polish</option>
+    <option value="B10">B10 Spar. Oven/Grill Cleaner #5372701767</option>
+    <option value="B11">B11 Super Hil-Aire F&C #HIL0105554</option>
+    <option value="B12">B12 Gum-Go (Freeze) #HIL0103055</option>
+    <option value="B13">B13 Liquid Gum-Go #HIL0091204</option>
+    <option value="B14">B14 Spartan Carpet Stain Remover</option>
+    <option value="B15">B15 Carpet Spotter (Small) # HIL0091004</option>
+    <option value="B16">B16 Carpet Contempo Coffee/Tea Solution</option>
+    <option value="B17">B17 Purell Sanitizing Wipes</option>
+    <option value="B18">B18 Hill. Quick & Clean Sanitizing Wipes</option>
+    <option value="B19">B19 Repel Seal RTU Gal. (HIL0049706)</option>
+    <option value="B20">B20 Take Down F&C Gal. (HIL0046806)</option>
+    <option value="B21">B21 Gum-Go 6.5oz Aerosol 1 Bottle (HIL0103055)</option>
+    <option value="B22">B22 Defoamer II 1 Gal. (HIL0018306)</option>
+    <option value="B23">B23 Laundry Detergent 1 Gal. (HIL0045906)</option>
+    <option value="B24">B24 Creme Clean RTU 12Qt/Case (HIL0010604)</option>
+    <option value="B25">B25 3M Steel Cleaner 21oz. Aerosol (48011591582)</option>
+    <option value="B27">B27 Shower Foam Cleaner 1 Gal. (HIL0017406)</option>
+    <option value="B28">B28 Mariner Acid Restroom 1 Gal. (HIL0047706)</option>
+    <option value="B29">B29 Liquid Enzyme II 1 Gal. (HIL0047006)</option>
+    <option value="B30">B30 Chalk and Whiteboard Clean. (HIL0109355)</option>
+    <option value="B31">B31 Tile and Grout Renovator 1 Gal. (HIL0047506)</option>
+    <option value="L2">L2 Scensible Clear Liners 1000CT (LBCD)</option>
+    <option value="L3">L3 Hospeco Wax Paper Small 500CT (HOS260)</option>
+    <option value="L4">L4 RubMaid Wax Paper 250CT (RUB6141)</option>
+    <option value="B32">B32 38x57 Black 60gal. 100/Case (LRV3860150K)</option>
+    <option value="B33">B33 43x48 Natural 56gal. 200/Case (LH434816N)</option>
+    <option value="B24">B24 30x37 Natural 30gal. 500/Case (LH303713N)</option>
+    <option value="J1">J1 Vinyl Small 100/Box (IVPF)</option>
+    <option value="J2">J2 Vinyl Medium 100/Box (IVPF)</option>
+    <option value="J3">J3 Vinyl Large 100/Box (CMUIVPF)</option>
+    <option value="J4">J4 Vinyl XL 100/Box (CMUIVPF)</option>
+    <option value="J5">J5 Nitrile Blue Small 100/Box (XNPF)</option>
+    <option value="J6">J6 Nitrile Blue Medium 100/Box (XNPF)</option>
+    <option value="J7">J7 Nitrile Blue Large 100/Box (XNPF)</option>
+    <option value="J8">J8 Nitrile Blue XL 100/Box (XNPF)</option>
+    <option value="G1">G1 TCell Citrus Refill 6CT. (1076390502113)</option>
+    <option value="G2">G2 TCell Pure Refill 6CT. (763905024983)</option>
+    <option value="G3">G3 TCell Dispenser #1799881</option>
+    <option value="C1">C1 Shower Cleaning Kit #HIL99225</option>
+    <option value="C2">C2 Micro-Fiber Blue/Glass</option>
+    <option value="C3">C3 Micro-Fiber Red</option>
+    <option value="C4">C4 Micro-Fiber Yellow</option>
+    <option value="C5">C5 Micro-Fiber Green</option>
+    <option value="C6">C6 Toilet Brush (Bristle)</option>
+    <option value="C7">C7 Johnny Mop (Fluffy)</option>
+    <option value="C11">C11 Blank Spray Bottles</option>
+    <option value="C12">C12 Mop Head X-Large (String)</option>
+    <option value="C13">C13 Mop Head Large (String)</option>
+    <option value="C14">C14 Dust Mop Head 24" Blue (String)</option>
+    <option value="C15">C15 Dust Mop Head 18" Red (String)</option>
+    <option value="C16">C16 RubberMaid Mop Head (Green)</option>
+    <option value="C17">C17 Unger Mop Head (Red/White)</option>
+    <option value="C18">C18 Sponge (Yellow/White-Scrub)</option>
+    <option value="C19">C19 Sponge (Yellow/Green-Scrub)</option>
+    <option value="C20">C20 Sponge (Scotch Brite)</option>
+    <option value="C21">C21 White Scrub-Pad</option>
+    <option value="C22">C22 Green Scrub-Pad</option>
+    <option value="C23">C23 Magic Eraser (Blue Stripe, HIL30312)</option>
+    <option value="C24">C24 SOS Pad</option>
+    <option value="C25">C25 SOS Pad (Pink Soap)</option>
+    <option value="C26">C26 Magic Eraser, Blue-Stripe (HIL30312)</option>
+    <option value="K3">K3 Dust-Pan Rub.Maid Upright (RUB2531BK)</option>
+    <option value="K4">K4 Broom Yellow Angler Plastic-Bristle (UNS932A)</option>
+    <option value="K5">K5 Swiffer Duster-Kit Handle/Cloth (PGC82074)</option>
+    <option value="K6">K6 Swiffer Refill (PGC16944CT)</option>
+    <option value="C24">C24 Green 48" #Q448</option>
+    <option value="C25">C25 Green 24" #Q424</option>
+    <option value="C26">C26 Blue 22" #Q411</option>
+    <option value="C27">C27 Blue 18" #Q410</option>
+    <option value="C28">C28 Blue 11" #Q820</option>
+    <option value="C29">C29 White 18" #Q412</option>
+    <option value="D1">D1 Light Duty Dust Masks</option>
+    <option value="D2">D2 Safety Goggles</option>
+    <option value="D3">D3 Respirator Medium #6200/07025</option>
+    <option value="D4">D4 Flat Fold Face Shield #6648</option>
+    <option value="D5">D5 Shoe Covers (Blue)</option>
+    <option value="E1">E1 Windsor Versamatic</option>
+    <option value="E2">E2 Windsor Sensor/Versamatic-Plus</option>
+    <option value="E3">E3 Clarke Carpet-Master</option>
+    <option value="F1">F1 RubberMaid BP6Q</option>
+    <option value="F2">F2 Proteam BP "triangle" bags</option>
+    <option value="F3">F3 Proteam MegaVac, Coach, Super-Coach</option>
+    <option value="F4">F4 Wave/NuWave</option>
+  </select>
+</p>
+
+<p>Quantity
+  <input type="text" name="quantity5" value="{{request.form.quantity5}}">
+</p>
+<br>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

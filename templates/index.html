@@ -2,9 +2,14 @@
 <html>
 <body>
 
-<form action="/index" method="get">
-  <input type="checkbox" name="person" value="Dakota"> Dakota<br>
-  <input type="checkbox" name="person" value="Dalton"> Dalton<br>
+<h2>Welcome to the CMU Delivery Web App</h2>
+<br>
+<p>What would you like to do?</p>
+
+<form method='POST'>
+  <input type="radio" name="option" value='orders'> Place An Order<br>
+  <input type="radio" name="option" value='deliveries'> View Deliveries<br>
+  <input type="radio" name="option" value='interactiveOrderForm'> Interactive Order Form<br>
   <input type="submit" value="Submit">
 </form>
 

@@ -1,0 +1,39 @@
+<html>
+
+<p id="p1">Default Page</p>
+
+<input id="b1" type="submit" name="click" value="Mark">
+<input id="b2" type="submit" name="click" value="Home">
+
+<script>
+
+var orderString = "";
+orderString += "{{ currentPerson }}" + "<br>";
+orderString += "{{ currentBuilding }}" + "<br>";
+
+var _amounts = [];
+var _items = [];
+
+{% for amount in currentAmounts %}
+_amounts.push("{{amount}}");
+{% endfor %}
+
+{% for item in currentItems %}
+_items.push("{{item}}");
+{% endfor %}
+
+var a=0;
+for(a=0;a<_amounts.length;a++)
+{
+  orderString += _items[a];
+  orderString += _amounts[a] + "<br>";
+}
+document.getElementById("p1").innerHTML = orderString;
+if ({{ staged }} == True) document.getElementById("b1").value = "Mark as Staged";
+else document.getElementById("b1").value = "Mark as Delivered";
+
+
+</script>
+
+
+</html>

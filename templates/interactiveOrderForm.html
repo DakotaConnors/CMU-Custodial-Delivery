@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Welcome to the Interactive Order Form</h2>
+<br>
+
+<p id="p1"><p/>
+<form method='POST' id='personBuilding'>
+
+  <p id="p3">Who are you?<br>
+    <input id="chooseTextField" type="text" name="person" value="{{request.form.person}}">
+  </p>
+
+  <p id="p2">Which Building is this order for?
+  <br>
+  <select id="chooseDropDownMenu" name="building" value="{{request.form.building}}" placeholder="Which Building is this order for?"> Which building is this order for?
+    <option id="O1" value="Nothing">Choose a Building</option>
+    <option id="O2" value="Albers">Albers</option>
+    <option id="O3" value="Confluence">Confluence</option>
+    <option id="O4" value="Dominquez">Dominquez</option>
+    <option id="O5" value="Escalante">Escalante</option>
+    <option id="O6" value="Finearts">Fine Arts</option>
+    <option id="O7" value="HealthScienceNorth">Health Science North</option>
+    <option id="O8" value="Houston">Houston</option>
+    <option id="O9" value="LowellHeiny">Lowell Heiny</option>
+    <option id="O10" value="MavCenter">Mav Center</option>
+    <option id="O11" value="MPAC">MPAC</option>
+    <option id="O12" value="StudentWellness">Student Wellness</option>
+    <option id="O13" value="UniversityCenter">University Center</option>
+    <option id="O14" value="Wubben">Wubben</option>
+  </select>
+  </p>
+  <br>
+
+  <input id="b1" type="submit" name="click" value="Next">
+  <input id="b2" type="submit" name="click" value="Home">
+</form>
+
+
+<script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<html>
+
+<form method='POST'>
+<p id="p1">Something is wrong</p>
+
+<p id="p2">What Item do you need?
+<br>
+<select id="chooseDropDownMenu" name="item" value="{{request.form.item}}">
+  <option id="O1" value="Nothing">Choose an Item</option>
+</select>
+</p>
+
+<p>How many do you need?<br>
+  <select id="chooseDropDownMenuNumber" name="number" value="{{request.form.number}}">
+    <option id="O0" value="0">0</option>
+    <option id="O1" value="1">1</option>
+    <option id="O2" value="2">2</option>
+    <option id="O3" value="3">3</option>
+    <option id="O4" value="4">4</option>
+    <option id="O5" value="5">5</option>
+    <option id="O6" value="6">6</option>
+    <option id="O7" value="7">7</option>
+    <option id="O8" value="8">8</option>
+    <option id="O9" value="9">9</option>
+    <option id="O10" value="10">10</option>
+  </select>
+  <select id="chooseDropDownMenuType" name="type" value="{{request.form.type}}">
+    <option id="O0" value="count">Count</option>
+    <option id="O1" value="bottle">Bottle(s)</option>
+    <option id="O2" value="case">Case(s)</option>
+    <option id="O3" value="can">Can(s)</option>
+  </select>
+
+<input id="b1" type="submit" name="click" value="Add Item">
+<input id="b2" type="submit" name="click" value="Submit">
+</p>
+</form>
+
+<script>
+var Items = '{{ orderingItems }}';
+var Amounts = '{{ orderingAmounts }}';
+var orderString = 'Order for: {{ building }} <br> Ordered by: {{ person }}<br>Items in Cart:<br>';
+var counter = 0;
+for(counter=0;counter<Items.length;counter++)
+{
+  orderString += Items[counter] + " " + Amounts[counter];
+}
+document.getElementById("p1").innerHTML = orderString;
+
+var _IDS = [];
+var _NAMES = [];
+var _NUMBERS = [];
+var dropDownMenu = document.getElementById("chooseDropDownMenu");
+var tempChar = "";
+var option = document.createElement('option');
+
+{% for id in ids %}
+_IDS.push("{{id}}");
+{% endfor %}
+
+{% for n in names %}
+_NAMES.push("{{n}}");
+{% endfor %}
+
+{% for number in numbers%}
+_NUMBERS.push("{{number}}");
+{% endfor %}
+
+var len = {{ length }}
+var category = "{{ category}}"
+
+
+var a = 0;
+for(a=0;a<len;a++)
+{
+  option = document.createElement("option");
+  option.text = _NAMES[a];
+  option.id = _IDS[a];
+  option.value = _IDS[a];
+  tempChar = _IDS[a].charAt(0);
+  if (tempChar == category) dropDownMenu.add(option);
+}
+
+
+
+/*var name = "";
+var building = "";
+var orderingItems = [];
+var orderingAmounts = [];
+
+var pageNumber = 0;
+var itemCategory = "";
+var len = {{ length }}
+
+function ChangePage(clicked_id) {
+  if (pageNumber == 0)
+  {
+    name = document.getElementById("chooseTextField").value;
+    building = document.getElementById("chooseDropDownMenu").value;
+
+    var tempString = ""
+    tempString += ("Order for: " + building +"<br>" + "Ordered By: " +
+    name + "<br>" + "Items in Cart: <br>");
+
+    var tempCounter = 0;
+    for(tempCounter=0; tempCounter<orderingItems.length; tempCounter++)
+    {
+      tempString += orderingItems[tempCounter] + " -- " + orderingAmounts[tempCounter] + "<br>";
+    }
+
+    document.getElementById("p1").innerHTML = tempString;
+
+    var dropDownMenu = document.getElementById("chooseDropDownMenu");
+    var tempLen = dropDownMenu.length;
+    for (i=0; i< tempLen;i++)
+    {
+      dropDownMenu.remove(dropDownMenu[0]);
+    }
+
+    var option = document.createElement("option");
+
+    option.text = "Nothing";
+    option.id = "nothing";
+    option.value = "nothing";
+    dropDownMenu.add(option);
+
+    option = document.createElement("option");
+    option.text = "Chemicals/Cleaners";
+    option.id = "C";
+    option.value = "C";
+    dropDownMenu.add(option);
+
+    option = document.createElement("option");
+    option.text = "Equipment";
+    option.id = "E";
+    option.value = "E";
+    dropDownMenu.add(option);
+
+    option = document.createElement("option");
+    option.text = "Paper Product";
+    option.id = "P";
+    option.value = "P";
+    dropDownMenu.add(option);
+
+    option = document.createElement("option");
+    option.text = "Laundry";
+    option.id = "L";
+    option.value = "L";
+    dropDownMenu.add(option);
+
+    document.getElementById("p2").innerHTML = "What Category is this item in?";
+    document.getElementById("p3").style.visibility = "hidden";
+    document.getElementById("chooseTextField").style.visibility = "hidden";
+    document.getElementById("b1").value = "Search";
+    pageNumber = 1;
+  }
+
+  else if (pageNumber == 1)
+  {
+    if (clicked_id == "b1")
+    {
+        var dropDownMenu = document.getElementById("chooseDropDownMenu");
+        var category = dropDownMenu.value.toLowerCase();
+        var tempLen = dropDownMenu.length;
+        for (i=0; i<tempLen;i++)
+        {
+          dropDownMenu.remove(dropDownMenu[0]);
+        }
+
+        var option = document.createElement("option");
+
+        option.text = "Nothing";
+        option.id = "nothing";
+        option.value = "nothing";
+        dropDownMenu.add(option);
+        var a = 0;
+        var tempChar = "";
+        for(a=0;a<len;a++)
+        {
+
+        }
+
+        document.getElementById("p2").innerHTML = "Which item do you need?";
+        document.getElementById("p3").innerHTML =  "How many do you need?";
+        document.getElementById("chooseTextField").value = "";
+        document.getElementById("chooseTextField").style.visibility = "visible";
+        document.getElementById("b1").value = "Add Item";
+        document.getElementById("b2").value = "Submit";
+        document.getElementById("p3").style.visibility = "visible";
+        pageNumber = 2
+      }
+
+      else if (clicked_id == "b2")//submitting order
+      {
+        pageNumber = 3;
+        var orderString = "FINAL ORDER REVIEW<br>";
+        orderString += "Order for: " + building + "<br>";
+        orderString += "Ordered by: " + name + "<br>";
+        orderString += "Items Ordered:" + "<br>";
+        counter = 0;
+        for(counter=0; counter<orderingItems.length; counter++)
+        {
+          orderString += orderingItems[counter] + " -- " + orderingAmounts[counter] + "<br>";
+        }
+
+        document.getElementById("p1").innerHTML = orderString;
+        document.getElementById("p2").style.visibility = "hidden";
+        document.getElementById("p3").style.visibility = "hidden";
+        document.getElementById("b2").style.visibility = "hidden";
+        document.getElementById("chooseDropDownMenu").style.visibility = "hidden";
+        document.getElementById("chooseTextField").style.visibility = "hidden";
+        document.getElementById("b1").value = "Confirm";
+      }
+  }
+
+  else if (pageNumber == 2)
+  {
+    var counter = 0;
+    var item = "";
+    for(counter=0; counter<_NAMES.length; counter++)
+    {
+      if (_IDS[counter] == document.getElementById("chooseDropDownMenu").value)
+      {
+        item = _NAMES[counter];
+      }
+    }
+    var amount = document.getElementById("chooseTextField").value;
+    if (document.getElementById("chooseDropDownMenu").value != "nothing")
+    {
+      orderingItems.push(item);
+      orderingAmounts.push(amount);
+    }
+
+    var tempString = ""
+    tempString += ("Order for: " + building +"<br>" + "Ordered By: " +
+    name + "<br>" + "Items in Cart: <br>");
+
+    var tempCounter = 0;
+    for(tempCounter=0; tempCounter<orderingItems.length; tempCounter++)
+    {
+      tempString += orderingItems[tempCounter] + " -- " + orderingAmounts[tempCounter] + "<br>";
+    }
+
+    document.getElementById("p1").innerHTML = tempString;
+
+
+
+    if (clicked_id == "b1") //Add another item
+    {
+      var dropDownMenu = document.getElementById("chooseDropDownMenu");
+      var tempLen = dropDownMenu.length;
+      for (i=0; i<tempLen;i++)
+      {
+        dropDownMenu.remove(dropDownMenu[0]);
+      }
+
+      var option = document.createElement("option");
+      option.text = "Nothing";
+      option.id = "nothing";
+      option.value = "nothing";
+      dropDownMenu.add(option);
+
+      option = document.createElement("option");
+      option.text = "Chemicals/Cleaners";
+      option.id = "C";
+      option.value = "C";
+      dropDownMenu.add(option);
+
+      option = document.createElement("option");
+      option.text = "Equipment";
+      option.id = "E";
+      option.value = "E";
+      dropDownMenu.add(option);
+
+      option = document.createElement("option");
+      option.text = "Paper Product";
+      option.id = "P";
+      option.value = "P";
+      dropDownMenu.add(option);
+
+      option = document.createElement("option");
+      option.text = "Laundry";
+      option.id = "L";
+      option.value = "L";
+      dropDownMenu.add(option);
+
+      document.getElementById("chooseTextField").value = "";
+      document.getElementById("p2").innerHTML = "What Category is this item in?";
+      document.getElementById("p3").style.visibility = "hidden";
+      document.getElementById("chooseTextField").style.visibility = "hidden";
+      document.getElementById("b1").value = "Search";
+
+      pageNumber = 1;
+    }
+
+    else if (clicked_id == "b2") //submit order
+    {
+      pageNumber = 3;
+      var orderString = "FINAL ORDER REVIEW<br>";
+      orderString += "Order for: " + building + "<br>";
+      orderString += "Ordered by: " + name + "<br>";
+      orderString += "Items Ordered:" + "<br>";
+      var counter = 0;
+      for(counter=0; counter<orderingItems.length; counter++)
+      {
+        orderString += orderingItems[counter] + " -- " + orderingAmounts[counter] + "<br>";
+      }
+
+      document.getElementById("p1").innerHTML = orderString;
+      document.getElementById("p2").style.visibility = "hidden";
+      document.getElementById("p3").style.visibility = "hidden";
+      document.getElementById("b2").style.visibility = "visible";
+      document.getElementById("chooseDropDownMenu").style.visibility = "hidden";
+      document.getElementById("chooseTextField").style.visibility = "hidden";
+      document.getElementById("b1").value = "Confirm";
+      //document.getElementById("personBuilding").style.visibility = "hidden";
+    }
+  }
+
+  else if (pageNumber == 3)
+  {
+
+  }
+
+}
+*/
+</script>
+
+</html>

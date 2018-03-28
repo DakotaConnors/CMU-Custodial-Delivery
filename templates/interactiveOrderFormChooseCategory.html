@@ -1,0 +1,92 @@
+<html>
+<body>
+<p id="p1">Test</p>
+<br>
+<form method='POST' id='category'>
+
+
+  <p id="p2">What Category is this item in?
+  <br>
+  <select id="chooseDropDownMenu" name="category" value="{{request.form.category}}">
+    <option id="O1" value="Nothing">Choose a Category</option>
+  </select>
+  </p>
+  <br>
+  </p>
+
+  <input id="b1" type="submit" name="click" value="Search">
+  <input id="b2" type="submit" name="click" value="Home">
+  <input id="b3" type="submit" name="click" value="Submit Order">
+</form>
+
+<script>
+var _IDS = [];
+var _NAMES = [];
+var _NUMBERS = [];
+
+{% for id in ids %}
+_IDS.push("{{id}}");
+{% endfor %}
+
+{% for n in names %}
+_NAMES.push("{{n}}");
+{% endfor %}
+
+{% for number in numbers%}
+_NUMBERS.push("{{number}}");
+{% endfor %}
+
+var _Items = []
+{% for item in orderItems %}
+_Items.push("{{item}}");
+{% endfor %}
+
+var _Amounts = [];
+{% for amount in orderAmounts %}
+_Amounts.push("{{amount}}");
+{% endfor %}
+
+var orderString = 'Order for: {{ building }} <br> Ordered by: {{ person }}<br>Items in Cart:<br>';
+var counter = 0;
+var counter2 = 0;
+for(counter=0;counter<_Items.length;counter++)
+{
+  for(counter2=0;counter2<_IDS.length;counter2++)
+  {
+    if (_IDS[counter2] == _Items[counter]) orderString += _NAMES[counter2] + " " + _Amounts[counter] + '<br>';
+  }
+}
+
+document.getElementById("p1").innerHTML = orderString;
+if (_Items.length == 0) document.getElementById("b3").style.visibility = "hidden";
+
+var dropDownMenu = document.getElementById("chooseDropDownMenu");
+
+option = document.createElement("option");
+option.text = "Chemicals/Cleaners";
+option.id = "C";
+option.value = "C";
+dropDownMenu.add(option);
+
+option = document.createElement("option");
+option.text = "Equipment";
+option.id = "E";
+option.value = "E";
+dropDownMenu.add(option);
+
+option = document.createElement("option");
+option.text = "Paper Product";
+option.id = "P";
+option.value = "P";
+dropDownMenu.add(option);
+
+option = document.createElement("option");
+option.text = "Laundry";
+option.id = "L";
+option.value = "L";
+dropDownMenu.add(option);
+
+
+</script>
+</body>
+</html>

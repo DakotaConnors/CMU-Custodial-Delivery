@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Choose and Order to View</h2>
+
+<p id="p1"></p>
+
+<form method='POST'>
+  <p>
+    <select id="chooseDropDownMenu" name="order" value="{{request.form.order}}">
+      <option id="O1" value="Nothing">Choose an order</option>
+    </select>
+  </p>
+
+<input id="b1" type="submit" name="click" value="Search">
+<input id="b2" type="submit" name="click" value="Home">
+
+</form>
+
+
+<script>
+var _names = [];
+{% for name in names %}
+_names.push("{{name}}");
+{% endfor %}
+
+var _buildings = [];
+{% for building in buildings %}
+_buildings.push("{{building}}");
+{% endfor %}
+
+var _numbers = [];
+{% for number in numbers %}
+_numbers.push("{{number}}");
+{% endfor %}
+
+var dropDownMenu = document.getElementById("chooseDropDownMenu");
+var option = document.createElement('option');
+var a = 0;
+for(a=0;a<_names.length;a++)
+{
+  option = document.createElement('option');
+  option.text = _names[a] + " " + _buildings[a] + " " + _numbers[a];
+  option.id = _names[a] + "_" + _buildings[a] + "_" + _numbers[a];
+  option.value = _names[a] + "_" + _buildings[a] + "_" + _numbers[a];
+  dropDownMenu.add(option);
+}
+
+</script>
+
+</body>
+</html>
