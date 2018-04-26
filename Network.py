@@ -44,6 +44,10 @@ def index():
 
 @app.route('/home/', methods=['POST', 'GET'])
 def home():
+    global orderItems, orderAmounts
+    orderItems = []
+    orderAmounts = []
+
     if request.method == 'POST':
         choice = request.form['option']
         if choice == 'orders': return redirect(url_for('ordering'))
@@ -84,7 +88,6 @@ def ordering():
 @app.route('/submitted/', methods=['POST', 'GET'])
 def finishedOrder():
     if request.method == 'POST':
-        print('Back to home page')
         return redirect(url_for('home'))
     return render_template('submit.html')
 
@@ -104,6 +107,8 @@ def deliveries():
                 if (order.number == tempString):
                     currentOrder = order
             return redirect(url_for('viewDelivery'))
+        if request.form['click'] == 'Home':
+            return redirect(url_for('home'))
 
     currentOrders = Save.loadPendingOrders()
     names = []
@@ -118,8 +123,29 @@ def deliveries():
 
     return render_template('deliveries.html', names=names, buildings=buildings, numbers=numbers)
 
-@app.route('/deliveries/viewDelivery/')
+@app.route('/deliveries/viewDelivery/', methods=['POST', 'GET'])
 def viewDelivery():
+    if request.method == 'POST':
+        if request.form['click'] == 'Mark as Staged':
+            currentOrder.staged = True
+            for order in currentOrders:
+                if order.number == currentOrder.number:
+                    order = currentOrder
+            Save.savePendingOrders(currentOrders)
+            return redirect(url_for('deliveries'))
+        if request.form['click'] == "Mark as Delivered":
+            for order in currentOrders:
+                if order.number == currentOrder.number:
+                    tempList = []
+                    tempList.append(order)
+                    Save.saveCompletedOrders(tempList)
+                    Save.deletePendingOrder(order.number)
+                    currentOrders.remove(order)
+            return redirect(url_for('deliveries'))
+        if request.form['click'] == "Home":
+            return redirect(url_for('home'))
+
+
     currentPerson = currentOrder.person
     currentBuilding = currentOrder.location[0]
     currentItems = []
@@ -204,5 +230,5 @@ def interactiveOrderFormConfirm():
         return redirect(url_for('finishedOrder'))
     return render_template('interactiveOrderFormConfirm.html', building=building, person=person, category=category, ids=ids, numbers=numbers, names=names, orderItems=orderItems, orderAmounts=orderAmounts, length=length)
 
-#app.run(host='0.0.0.0', port=8000, threaded=True)
-app.run(debug=True)
+app.run(host='0.0.0.0', port=8000, threaded=True)
+#app.run(debug=True)
